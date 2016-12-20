@@ -34,8 +34,8 @@ class FiguresController < ApplicationController
 
   get '/figures/:id' do
     @figure = Figure.find(params[:id])
-    @title = Title.find(@figure.title_ids)
-    @landmark = Landmark.find(@figure.landmark_ids.first)
+    @titles = @figure.titles
+    @landmarks = @figure.landmarks
 
     erb :'figures/show'
   end

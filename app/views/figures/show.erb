@@ -10,7 +10,17 @@
     <p>
       <h2> <%= @figure.name %> </h2>
 
-      <p><%= @landmark.name %></p>
+      <p>
+        <% @landmarks.each do |landmark| %>
+        <%= landmark.name %>
+        <% end %>
+      </p>
+
+      <p>
+        <% @titles.each do |title| %>
+        <%= title.name %>
+        <% end %>
+      </p>
 
     </p>
   </body>
