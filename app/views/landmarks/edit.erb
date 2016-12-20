@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/landmarks/<%= @landmark.id %>" method="POST">
+      <input type="hidden" name="_method" value="PATCH">
+      <p>
+        <label for="landmark_name"> Edit Landmark Name: </label>
+        <input type="text" id="name" name="landmark[name]" value="<%=@landmark.id%>">
+      </p>
+
+      <p>
+        <label for="landmark_year"> Edit Landmark Year Completed: </label>
+        <input type="text" id="year_completed" name="landmark[year_completed]" value="<%=@landmark.year_completed%>">
+      </p>
+
+      <input type="submit" value="Edit Landmark">
+    </form>
+  </body>
+</html>

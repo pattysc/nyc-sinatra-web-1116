@@ -7,14 +7,11 @@
   </head>
 
   <body>
-    <% @landmarks.each do |landmark| %>
     <p>
-      <h2> <%= landmark.name %> </h2>
-    </p>
-    <p>
-      <h2> <%= landmark.year_completed %> </h2>
-    </p>
-    <% end %>
+      <h2> <%= @figure.name %> </h2>
 
+      <p><%= @landmark.name %></p>
+
+    </p>
   </body>
 </html>

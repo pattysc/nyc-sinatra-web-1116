@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/landmarks" method="POST">
+      <p>
+        <label for="landmark_name"> Landmark Name: </label>
+        <input type="text" id="landmark_name" name="landmark[name]">
+      </p>
+
+      <p>
+        <label for="landmark_year"> Landmark Year Completed: </label>
+        <input type="text" id="landmark_year_completed" name="landmark[year_completed]">
+      </p>
+
+      <input type="submit" value="Create New Landmark">
+    </form>
+  </body>
+</html>

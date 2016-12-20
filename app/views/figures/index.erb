@@ -7,12 +7,9 @@
   </head>
 
   <body>
-    <% @landmarks.each do |landmark| %>
+    <% @figures.each do |figure| %>
     <p>
-      <h2> <%= landmark.name %> </h2>
-    </p>
-    <p>
-      <h2> <%= landmark.year_completed %> </h2>
+      <h2> <%= figure.name %> </h2>
     </p>
     <% end %>
 

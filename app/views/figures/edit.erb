@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/figures/<%= @figure.id %>" method="POST">
+      <input type="hidden" name="_method" value="PATCH">
+      <p> Edit your figure's name <input type="text" id="figure_name" name="figure[name]" value="<%= @figure.name %>"> </p>
+
+      <h2>Select a new title</h2>
+      <% @titles.each do |t| %>
+       <input type="checkbox" id="title_<%=t.id%>" name="figure[title_ids][]" value="<%=t.id%>"><%=t.name%><br>
+      <% end %><br>
+
+      <h2>Edit the figure's title</h2>
+      <p>Create a new title: <input type="text" id="new_title" name="title[name]"></p>
+
+      <h2>Edit the landmark</h2>
+      <% @landmarks.each do |t| %>
+       <input type="checkbox" id="landmark_<%=t.id%>" name="figure[landmark_ids][]" value="<%= t.id %>"><%= t.name %><br>
+      <% end %><br>
+
+      <h2>Edit the Landmark</h2>
+      <p>Landmark name: <input type="text" id="new_landmark" name="landmark[name]"></p>
+
+      <input type="submit" id="submit" value="Edit Figure">
+
+    </form>
+  </body>
+</html>

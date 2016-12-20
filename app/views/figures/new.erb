@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/figures" method="POST">
+      <p> Create a new Figure <input type="text" id="figure_name" name="figure[name]"> </p>
+
+      <h2>Select a Title</h2>
+      <% @titles.each do |t| %>
+       <input type="checkbox" id="title_<%=t.id%>" name="figure[title_ids][]" value="<%=t.id%>"><%=t.name%><br>
+      <% end %><br>
+
+      <h2>Create new Title</h2>
+      <p>Title name: <input type="text" id="new_title" name="title[name]"></p>
+
+      <h2>Select a Landmark</h2>
+      <% @landmarks.each do |t| %>
+       <input type="checkbox" id="landmark_<%=t.id%>" name="figure[landmark_ids][]" value="<%= t.id %>"><%= t.name %><br>
+      <% end %><br>
+
+      <h2>Create new Landmark</h2>
+      <p>Landmark name: <input type="text" id="new_landmark" name="landmark[name]"></p>
+
+      <input type="submit" id="submit" value="Create New Figure">
+
+    </form>
+  </body>
+</html>
