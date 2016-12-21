@@ -12,7 +12,7 @@
 
       <h2>Select a new title</h2>
       <% @titles.each do |t| %>
-       <input type="checkbox" id="title_<%=t.id%>" name="figure[title_ids][]" value="<%=t.id%>"><%=t.name%><br>
+       <input <%= "checked" if @figure.title_ids.include?(t.id)%> type="checkbox" id="title_<%=t.id%>" name="figure[title_ids][]" value="<%=t.id%>"><%=t.name%><br>
       <% end %><br>
 
       <h2>Edit the figure's title</h2>
@@ -20,7 +20,8 @@
 
       <h2>Edit the landmark</h2>
       <% @landmarks.each do |t| %>
-       <input type="checkbox" id="landmark_<%=t.id%>" name="figure[landmark_ids][]" value="<%= t.id %>"><%= t.name %><br>
+       <input type="checkbox" id="landmark_<%=t.id%>" name="figure[landmark_ids][]" value="<%= t.id %>" <%="checked" if @figure.landmark_ids.include?(t.id)%> >
+       <%= t.name %><br>
       <% end %><br>
 
       <h2>Edit the Landmark</h2>
