@@ -7,11 +7,8 @@ class FiguresController < ApplicationController
   end
 
   post '/figures' do
-    # binding.pry
-    @figure = Figure.new
-    @figure.name = params["figure"]["name"]
-    @figure.title_ids = params["figure"]["title_ids"]
-    @figure.landmark_ids = params["figure"]["landmark_ids"]
+    @figure = Figure.create(params["figure"])
+
 
     if params["title"]["name"] != ''
       @title = Title.create(params["title"])
@@ -54,9 +51,6 @@ class FiguresController < ApplicationController
   patch '/figures/:id' do
 
     @figure = Figure.find(params[:id])
-    # @figure.name = params["figure"]["name"]
-    # @figure.title_ids = params["figure"]["title_ids"]
-    # @figure.landmark_ids = params["figure"]["landmark_ids"]
     @figure.update(params[:figure])
 
     if params["title"]["name"] != ''
